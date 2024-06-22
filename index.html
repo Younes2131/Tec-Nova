@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova | Futuristic E-Commerce Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+</head>
+<body>
+    <div id="loader" class="fullscreen">
+        <div class="loader-content">
+            <div id="lottie-loader"></div>
+            <h2 class="neon-text">Initializing TechNova Experience</h2>
+        </div>
+    </div>
+
+    <header id="main-header" class="glassmorph">
+        <div class="logo">
+            <img src="/imgs/technova-logo.png" alt="TechNova Logo">
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                <li><a href="#products" class="nav-link" data-section="products">Products</a></li>
+                <li><a href="#deals" class="nav-link" data-section="deals">Deals</a></li>
+                <li><a href="#categories" class="nav-link" data-section="categories">Categories</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button id="search-toggle" class="icon-button" aria-label="Search">🔍</button>
+            <button id="cart-toggle" class="icon-button" aria-label="Cart">🛒 <span id="cart-count">0</span></button>
+            <button id="account-toggle" class="icon-button" aria-label="Account">👤</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="fullscreen">
+            <div id="hero-particle-network"></div>
+            <h1 class="glitch-text">Welcome to TechNova</h1>
+            <p class="typewriter">Discover the future of shopping.</p>
+            <a href="#featured-products" class="cta-button">Explore Our Products</a>
+        </section>
+
+        <section id="featured-products" class="fullscreen">
+            <h2 class="section-title">Featured Products</h2>
+            <div id="product-carousel" class="carousel-3d"></div>
+            <div class="carousel-controls">
+                <button id="prev-product">◀</button>
+                <button id="next-product">▶</button>
+            </div>
+        </section>
+
+        <section id="deals" class="fullscreen">
+            <h2 class="section-title">Hot Deals</h2>
+            <div class="deal-grid">
+                <!-- Deal items will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="categories" class="fullscreen">
+            <h2 class="section-title">Shop by Category</h2>
+            <div id="category-galaxy"></div>
+            <div id="category-details" class="glassmorph">
+                <h3 id="selected-category">Select a category</h3>
+                <p id="category-description"></p>
+            </div>
+        </section>
+
+        <section id="products" class="fullscreen">
+            <h2 class="section-title">Our Products</h2>
+            <div id="product-filters" class="glassmorph">
+                <input type="text" id="search-products" placeholder="Search products...">
+                <select id="sort-products">
+                    <option value="popularity">Sort by Popularity</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                </select>
+            </div>
+            <div id="product-grid">
+                <!-- Product items will be dynamically inserted here -->
+            </div>
+            <div id="pagination" class="glassmorph">
+                <!-- Pagination controls will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="newsletter" class="glassmorph">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for exclusive deals and futuristic product launches.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta-button">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="glassmorph">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About TechNova</h3>
+                <p>Pioneering the future of e-commerce with cutting-edge technology and unparalleled user experiences.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@technova.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" class="social-icon" aria-label="Facebook">
+                        <svg><!-- Facebook icon SVG --></svg>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon" aria-label="Twitter">
+                        <svg><!-- Twitter icon SVG --></svg>
+                    </a>
+                    <a href="#" target="_blank" class="social-icon" aria-label="Instagram">
+                        <svg><!-- Instagram icon SVG --></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TechNova | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <div id="cart-modal" class="modal glassmorph">
+        <div class="modal-content">
+            <h2>Your Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div id="cart-total">
+                <p>Total: <span id="cart-total-amount">$0.00</span></p>
+            </div>
+            <button id="checkout-button" class="cta-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <div id="account-modal" class="modal glassmorph">
+        <div class="modal-content">
+            <h2>Account</h2>
+            <form id="login-form">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="cta-button">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+        </div>
+    </div>
+
+    <div id="product-modal" class="modal glassmorph">
+        <div class="modal-content">
+            <div id="product-details">
+                <!-- Product details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="cursor" class="custom-cursor"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
